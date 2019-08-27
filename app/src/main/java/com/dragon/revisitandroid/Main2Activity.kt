@@ -12,8 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity() {
-    private val TAG = "MainActivity";
+class Main2Activity : AppCompatActivity() {
+    private val TAG = "Main2Activity";
     private val connection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName, service: IBinder) {
             Log.i(TAG, TAG + ".onServiceConnected")
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         btn_next_activity.setOnClickListener(View.OnClickListener {
             Log.i(TAG, TAG + ".click->next_activity")
-            startActivity(Intent(this, Main2Activity::class.java))
+            startActivity(Intent(this, Main3Activity::class.java))
         })
     }
 

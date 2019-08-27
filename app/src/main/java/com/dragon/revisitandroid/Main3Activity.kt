@@ -12,15 +12,15 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity() {
-    private val TAG = "MainActivity";
+class Main3Activity : AppCompatActivity() {
+    private val TAG = "Main3Activity";
     private val connection = object : ServiceConnection {
-        override fun onServiceConnected(name: ComponentName, service: IBinder) {
-            Log.i(TAG, TAG + ".onServiceConnected")
+        override fun onServiceDisconnected(name: ComponentName?) {
+            Log.i(TAG, TAG + ".onServiceDisconnected")
         }
 
-        override fun onServiceDisconnected(name: ComponentName) {
-            Log.i(TAG, TAG + ".onServiceDisconnected")
+        override fun onServiceConnected(name: ComponentName, service: IBinder) {
+            Log.i(TAG, TAG + ".onServiceConnected")
         }
     }
 
@@ -48,10 +48,6 @@ class MainActivity : AppCompatActivity() {
             unbindService(connection)
         })
 
-        btn_next_activity.setOnClickListener(View.OnClickListener {
-            Log.i(TAG, TAG + ".click->next_activity")
-            startActivity(Intent(this, Main2Activity::class.java))
-        })
     }
 
     override fun onDestroy() {
