@@ -1,16 +1,7 @@
 package com.dragon.revisitandroid;
 
-import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-
-import java.util.List;
-
-import javax.net.ssl.HttpsURLConnection;
+import android.os.Handler;
+import android.util.Log;
 
 /**
  * Description:
@@ -18,26 +9,26 @@ import javax.net.ssl.HttpsURLConnection;
  * @author guoyongping
  * @date 2019-08-31 10:42
  */
-public class Test extends AppCompatActivity {
+public class Test {
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
+    private static Handler mHandler = new Handler();
+
+    public static void main(String[] args) {
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                Log.d("11", "---");
+            }
+        });
+
         new Thread(new Runnable() {
             @Override
             public void run() {
 
             }
         }).start();
-    }
 
-    public static HttpsURLConnection getHttpURLConnection2() {
-        HttpsURLConnection mHttpsURLConnection = null;
-        List<NameValuePair> postParams = null;
-
-        postParams.add(new BasicNameValuePair("ip","59.108.54.37"));
-
-        return mHttpsURLConnection;
     }
 
 
