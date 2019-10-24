@@ -1,7 +1,6 @@
 package com.dragon.revisitandroid
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.dragon.revisitandroid.network.okhttp.OkHttpEngine
 import com.dragon.revisitandroid.network.okhttp.ResultCallBack
@@ -34,8 +33,8 @@ class TestOkHttpActivity : AppCompatActivity() {
                     }
 
                     override fun onResponse(response: Response) {
-                        val str = response.body?.string()
-                        Log.i(TAG, "--->$str")
+//                        val str = response.body?.string()
+//                        Log.i(TAG, "--->$str")
                     }
                 })
         }).start()
@@ -65,8 +64,8 @@ class TestOkHttpActivity : AppCompatActivity() {
 
             @Throws(IOException::class)
             override fun onResponse(call: Call, response: Response) {
-                val str = response.body?.string()
-                Log.i(TAG, "--->$str")
+//                val str = response.body?.string()
+//                Log.i(TAG, "--->$str")
 
             }
         })
@@ -94,8 +93,8 @@ class TestOkHttpActivity : AppCompatActivity() {
 
             @Throws(IOException::class)
             override fun onResponse(call: Call, response: Response) {
-                val str = response.body?.string()
-                Log.i(TAG, "--->$str")
+//                val str = response.body?.string()
+//                Log.i(TAG, "--->$str")
             }
         })
     }
